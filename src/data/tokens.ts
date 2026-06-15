@@ -37,7 +37,7 @@ export const tokens: Token[] = [
   },
   {
     id: 2,
-    address: '0x8f3Cf7ad23D3DbDddDE1c054F46B8D1a356a2b8b',
+    address: '0x610a3b45F74d663Ae69a81d3E8Acc53f7ffB3894',
     ticker: 'MCHI',
     name: 'MCHI',
     subtitle: 'MCHI',
@@ -53,7 +53,7 @@ export const tokens: Token[] = [
   },
   {
     id: 3,
-    address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+    address: '0xa4E83636d5e923FDb1Ccd84F0e124928b43a3374',
     ticker: 'AAPL',
     name: 'AAPL',
     subtitle: 'Apple',
@@ -69,7 +69,7 @@ export const tokens: Token[] = [
   },
   {
     id: 4,
-    address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+    address: '0x9071c3C4781177680dEf7e0154D5BF0E2C80A13c',
     ticker: 'TSLA',
     name: 'TSLA',
     subtitle: 'Tesla',
@@ -85,7 +85,7 @@ export const tokens: Token[] = [
   },
   {
     id: 5,
-    address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
+    address: '0xaaFfDECEB278094A43Ed3c97CFBde2E8ceCc92c7',
     ticker: 'DOGBRO',
     name: 'DOGBRO',
     subtitle: '狗哥sato',
@@ -101,7 +101,7 @@ export const tokens: Token[] = [
   },
   {
     id: 6,
-    address: '0x514910771AF9Ca656af840dff83E8264EcF986CA',
+    address: '0xB21Bf138e12031B3C07B57b7B60d04A324f1EE3C',
     ticker: 'QQQQ',
     name: 'QQQQ',
     subtitle: '企鹅TENCENT',
@@ -117,7 +117,7 @@ export const tokens: Token[] = [
   },
   {
     id: 7,
-    address: '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
+    address: '0xaBA20dEd3311aEd0a36eEB52638eCb068110c4b1',
     ticker: 'SPCX',
     name: 'SpaceX',
     subtitle: 'SpaceX',
@@ -133,7 +133,7 @@ export const tokens: Token[] = [
   },
   {
     id: 8,
-    address: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
+    address: '0xb6191AF371d6d473515d082584F2199e049393a1',
     ticker: 'CSI300',
     name: 'CSI300',
     subtitle: 'CSI300',
@@ -149,7 +149,7 @@ export const tokens: Token[] = [
   },
   {
     id: 9,
-    address: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+    address: '0x90A92C6f44111e636c37502834D281CAdA5D3136',
     ticker: 'RAM',
     name: 'RAM',
     subtitle: 'RAM COIN NVDA',
