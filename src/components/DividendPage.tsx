@@ -115,7 +115,7 @@ export default function DividendPage() {
             onClick={handleClaim}
             disabled={claiming || (authenticated && balance === 0n && !balanceLoading)}
           >
-            {claiming ? 'Confirming…' : authenticated ? '领取分红' : 'Connect wallet'}
+            {claiming ? 'Confirming…' : authenticated ? 'Claim' : 'Connect wallet'}
           </button>
 
           <p className="modal-disclaimer">

@@ -38,7 +38,7 @@ export default function Header() {
             Markets
           </Link>
           <Link to="/dividend" className={location.pathname === '/dividend' ? 'active' : ''}>
-            分红
+            Claim
           </Link>
           <a href="#">Portfolio</a>
           <a href="#">Launch</a>
@@ -68,7 +68,7 @@ export default function Header() {
             className="btn-dividend"
             onClick={() => setModalOpen(true)}
           >
-            分红
+            Claim
             {authenticated && !sa1tLoading && parseFloat(sa1tDisplay) > 0 && (
               <span className="btn-dividend-badge">{sa1tDisplay}</span>
             )}
