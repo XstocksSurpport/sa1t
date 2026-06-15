@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import MarketsPage from './components/MarketsPage'
 import TokenPage from './components/TokenPage'
+import DividendPage from './components/DividendPage'
 import './index.css'
 
 const PRIVY_APP_ID = 'cmq8xavwq00dw0bjo5cj6slax'
@@ -30,6 +31,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<MarketsPage />} />
         <Route path="/discover" element={<MarketsPage />} />
+        <Route path="/dividend" element={<DividendPage />} />
         <Route path="/t/:address" element={<TokenPage />} />
       </Routes>
     </>
