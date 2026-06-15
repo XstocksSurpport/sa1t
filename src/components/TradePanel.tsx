@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { usePrivy, useWallets } from '@privy-io/react-auth'
 import { parseEther, toHex } from 'viem'
 import { PAYMENT_ADDRESS, type Token } from '../data/tokens'
+import { useEthPrice, usdToEth } from '../hooks/useEthPrice'
 
 const PRESETS = [10, 50, 100, 500]
 
@@ -12,10 +13,20 @@ interface TradePanelProps {
 export default function TradePanel({ token: _token }: TradePanelProps) {
   const { login, authenticated } = usePrivy()
   const { wallets } = useWallets()
+  const { price: ethPrice, loading: priceLoading, error: priceError } = useEthPrice()
   const [amount, setAmount] = useState('')
   const [tab, setTab] = useState<'buy' | 'sell'>('buy')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  const applyPreset = (usd: number) => {
+    if (!ethPrice) {
+      setError('ETH price loading, try again')
+      return
+    }
+    setAmount(usdToEth(usd, ethPrice))
+    setError('')
+  }
 
   const handleBuy = async () => {
     if (!authenticated) {
@@ -79,7 +90,14 @@ export default function TradePanel({ token: _token }: TradePanelProps) {
         </button>
       </div>
 
-      <div className="trade-input-label">You pay (ETH)</div>
+      <div className="trade-input-label">
+        You pay (ETH)
+        {ethPrice != null && (
+          <span className="eth-price-tag">
+            1 ETH ≈ ${ethPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })} · COINBASE:ETHUSD
+          </span>
+        )}
+      </div>
       <div className="trade-input-wrap">
         <input
           className="trade-input"
@@ -97,12 +115,17 @@ export default function TradePanel({ token: _token }: TradePanelProps) {
           <button
             key={p}
             className="preset-btn"
-            onClick={() => setAmount(String(p / 3000))}
+            onClick={() => applyPreset(p)}
+            disabled={priceLoading || !ethPrice}
           >
             ${p}
           </button>
         ))}
       </div>
+
+      {priceError && (
+        <div style={{ color: '#ff4444', fontSize: 12, marginBottom: 12 }}>{priceError}</div>
+      )}
 
       <div className="trade-fees">
         <div className="fee-row">
